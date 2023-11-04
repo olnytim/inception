@@ -7,8 +7,7 @@ ARG	DB_NAME \
 
 RUN apk update && apk upgrade && apk add --no-cache mariadb mariadb-client
 
-RUN	mkdir /var/run/mysqld; \
-	chmod 777 /var/run/mysqld; \
+RUN mkdir /var/run/mysqld; chmod 777 /var/run/mysqld; \
 	{ echo '[mysqld]'; \
 	  echo 'skip-host-cache'; \
 	  echo 'skip-name-resolve'; \

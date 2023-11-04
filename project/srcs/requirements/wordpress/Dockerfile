@@ -1,6 +1,6 @@
-FROM	alpine:3.18
+FROM	alpine:3.16
 
-ARG	PHP_VERSION=82 \
+ARG	PHP_VERSION=8 \
 	DB_NAME \
 	DB_USER \
 	DB_PASS
@@ -39,4 +39,4 @@ RUN	wget https://wordpress.org/latest.zip && \
 COPY	./requirements/wordpress/conf/wp-config-create.sh .
 RUN	sh wp-config-create.sh && rm wp-config-create.sh && \
 	chmod -R 0777 wp-content/
-CMD	 ["/usr/sbin/php-fpm82", "-F"]
+CMD	 ["/usr/sbin/php-fpm8", "-F"]
